@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :name, :photo, :city ,presence: true
+  has_many :posts
 end

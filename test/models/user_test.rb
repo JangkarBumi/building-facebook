@@ -1,13 +1,24 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  test 'valid user' do
-    user = User.new(name: 'John', email: 'john@example.com', password: 'foobar', photo: 'imgurl.com', city: 'kediri')
-    assert user.valid?
+  def setup
+    @user = users(:one)
+  end
+
+  test "should be valid?" do
+    assert @user.valid?
   end
 
   test 'should not save user without email, name or password' do
     user = User.new
     assert !user.save
   end
+
+  test 'should return user post' do
+    u = @user.posts.first
+    assert u != nil
+  end
+
 end

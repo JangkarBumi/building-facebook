@@ -1,9 +1,4 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-# one:
-#   body: MyText
-#   user: one
-
-# two:
-#   body: MyText
-#   user: two
+one:
+  body: First Post
+  user: one
