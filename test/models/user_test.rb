@@ -7,7 +7,7 @@ class UserTest < ActiveSupport::TestCase
     @user = users(:one)
   end
 
-  test "should be valid?" do
+  test 'should be valid?' do
     assert @user.valid?
   end
 
@@ -18,7 +18,6 @@ class UserTest < ActiveSupport::TestCase
 
   test 'should return user post' do
     u = @user.posts.first
-    assert u != nil
+    assert !u.nil?
   end
-
 end
