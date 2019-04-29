@@ -9,6 +9,7 @@ files:
     - 'Rakefile'
     - 'test/test.helper.rb'
     - 'db/seeds.rb'
+    - 'db/migrate/*'
     - 'app/helpers/*'
     - 'config/*'
     - 'bin/*'
