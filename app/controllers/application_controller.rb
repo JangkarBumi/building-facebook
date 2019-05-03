@@ -7,10 +7,9 @@ class ApplicationController < ActionController::Base
     redirect_to user_session_path unless current_user
   end
 
-
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :photo, :city ])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[name photo city])
   end
 end
