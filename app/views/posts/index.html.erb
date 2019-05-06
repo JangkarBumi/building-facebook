@@ -1,11 +1,11 @@
 <h1>Timeline </h1>
 
-<%= form_for   @post, url: {action: "create"} do |f| %>
+<%= form_for @post do |f| %>
   <%= f.label :body, 'Your post here' %>
   <%= f.text_field :body %>
   <%= f.submit "Submit" %>
 <% end %>
-
+<hr>
 
 <% @posts.each do |post| %>
   <p><%= post.user.name %></p>
