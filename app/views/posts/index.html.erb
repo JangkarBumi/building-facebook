@@ -8,14 +8,14 @@
 <hr>
 
 <% @posts.each do |post| %>
-  <p><%= post.id %></p>
   <p><%= post.user.name %></p>
   <p><%= post.body %></p>
- <p>===</p>
- <% if post.likes.find_by(user: current_user) %>
-   <%= link_to  "Unlike", like_path(post.id) , :method => :delete%>
+  <br>
+  <span><%= post.likes.count %></span>
+  <% if post.likes.find_by(user: current_user) %>
+   <%= link_to "Unlike", like_path(post.id), :method => :delete %>
   <% else %>
-   <%= link_to  "Like",like_path(post.id), :method => :post %>
-   <% end %>
-  <hr>  
+   <%= link_to "Like",likes_path(:post_id => post.id), :method => :post %>
+  <% end %>
+  <hr>
 <% end %>
