@@ -18,13 +18,14 @@
    <%= link_to "Like",likes_path(:post_id => post.id), :method => :post %>
   <% end %>
   <br><br>
+  <% post.comments.each do |comment| %>
+    <p><%= comment.user.name %></p>
+    <p><%= comment.body %></p>
+  <% end %>
   <%= form_for @comment do |f| %>
     <%= f.label :body, 'Your comment here' %><br>
     <%= f.text_area :body %><br>
     <%= f.submit "Comment" %>
-  <% end %>
-  <% post.id.comments.each do |comment| %>
-    <p><%= comment.body %></p>
   <% end %>
   <hr>
 <% end %>
