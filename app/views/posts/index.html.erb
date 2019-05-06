@@ -1,6 +1,6 @@
 <h1>Timeline </h1>
 
-<%= form_for  Post.new, url: {action: "create"} do |f| %>
+<%= form_for   @post, url: {action: "create"} do |f| %>
   <%= f.label :body, 'Your post here' %>
   <%= f.text_field :body %>
   <%= f.submit "Submit" %>
