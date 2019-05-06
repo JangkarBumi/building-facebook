@@ -12,10 +12,7 @@ class UsersController < ApplicationController
     @posts = @user.posts
   end
 
-  def create
-    @friendship = current_user.friendships.build(friend_id: params[:friend_id])
-    @friendship.save
-  end
+
 
   def update; end
 

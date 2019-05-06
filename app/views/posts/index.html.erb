@@ -22,6 +22,7 @@
   <% post.comments.each do |comment| %>
     <p><%= comment.user.name %></p>
     <p><%= comment.body %></p>
+    <p>  ===  </p>
   <% end %>
   <%= form_for @comment do |f| %>
     <%= f.label :body, 'Your comment here' %><br>

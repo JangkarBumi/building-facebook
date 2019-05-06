@@ -2,5 +2,11 @@
 
 <% @users.each do |user| %>
   <p><%= user.name %></p>
+<%= link_to "Show", user_path(user.id) %>
+<% if user.friendships.find_by(user: current_user) %>
+  <%= link_to "Delete fri",friendships_path(:friend_id => user.id), :method => :delete %>
+  <% else %>
+ <%= link_to "Send a friend request", friendships_path(:friend_id => user.id), :method => :post %>
+  <% end %>
   <hr>
 <% end %>
