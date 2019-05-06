@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @post = Post.new
+    @comments = Comment.all
     @comment = Comment.new
   end
 
@@ -17,6 +18,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:body, :user_id, :post_id)
+    params.require(:post).permit(:body)
   end
 end
