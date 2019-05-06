@@ -1,14 +1,14 @@
 <h1>Timeline </h1>
 
 <%= form_for @post do |f| %>
-  <%= f.label :body, 'Your post here' %>
-  <%= f.text_field :body %>
+  <%= f.label :body, 'Your post here' %><br>
+  <%= f.text_area :body %><br>
   <%= f.submit "Submit" %>
 <% end %>
 <hr>
 
 <% @posts.each do |post| %>
-  <p><%= post.user.name %></p>
+  <h3><%= post.user.name %></h3>
   <p><%= post.body %></p>
   <br>
   <span><%= post.likes.count %></span>
@@ -16,6 +16,16 @@
    <%= link_to "Unlike", like_path(post.id), :method => :delete %>
   <% else %>
    <%= link_to "Like",likes_path(:post_id => post.id), :method => :post %>
+  <% end %>
+  <br><br>
+  <%= form_for @comment do |f| %>
+    <%= f.label :body, 'Your comment here' %><br>
+    <%= f.text_area :body %><br>
+    <%= f.label :user_id, 'user id' %><br>
+    <%= f.text_field :user_id %><br>
+    <%= f.label :post_id, 'post id' %><br>
+    <%= f.text_field :post_id %><br>
+    <%= f.submit "Submit" %>
   <% end %>
   <hr>
 <% end %>
