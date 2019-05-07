@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   def new; end
 
   def index
-    @posts = Post.where(:user_id => current_user.friendships)
+    @posts = Post.where({ user_id: [current_user.id, current_user.friendships]})
     @post = Post.new
     @comment = Comment.new
   end
