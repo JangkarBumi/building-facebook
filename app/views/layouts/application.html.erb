@@ -15,15 +15,12 @@
     <nav>
       <% if current_user %>
         <%= link_to "Timeline", posts_path %>
-        <%= link_to "Profile", user_path(current_user) %>
+        <%= link_to current_user.name, user_path(current_user) %>
         <%= link_to "Friend list",  users_path %>
         <%= link_to "Sign Out",  destroy_user_session_path, method: :delete %>
         Notifications:
-        <% @friendships.each do |friendship| %>
-          <% if current_user.id == friendship.friend_id %>
-            <%= link_to "new friend request", user_path(current_user) %>
-          <% end %>
-        <% end %>
+              <%=link_to @friendships.count, friendships_path %>
+
       <% else %>
         <%= link_to "Sign in", new_user_session_path %>
         <%= link_to "Sign up", new_user_registration_path %>
