@@ -7,6 +7,12 @@ class ApplicationController < ActionController::Base
     redirect_to user_session_path unless current_user
   end
 
+  before_action :friendships
+
+  def friendships
+    @friendships = Friendship.all
+  end
+
   protected
 
   def configure_permitted_parameters
