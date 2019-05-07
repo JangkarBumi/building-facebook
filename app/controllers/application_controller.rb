@@ -10,7 +10,8 @@ class ApplicationController < ActionController::Base
   before_action :friendships
 
   def friendships
-   @friendships = Friendship.where(["friend_id = :friend_id", { friend_id: current_user.id }]).pending
+    @friendships = Friendship.where(["friend_id = :friend_id",
+      { friend_id: current_user.id }]).pending
   end
 
 
