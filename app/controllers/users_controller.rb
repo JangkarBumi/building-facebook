@@ -12,8 +12,6 @@ class UsersController < ApplicationController
     @posts = @user.posts
   end
 
-
-
   def update; end
 
   def destroy
