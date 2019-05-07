@@ -19,7 +19,7 @@
         <%= link_to "Friend list",  users_path %>
         <%= link_to "Sign Out",  destroy_user_session_path, method: :delete %>
         Notifications:
-              <%=link_to @friendships.count, friendships_path %>
+  <%= link_to @friendships.count, friendships_path %> 
 
       <% else %>
         <%= link_to "Sign in", new_user_session_path %>
